@@ -4,7 +4,9 @@ build_targets:
   container:
     image: yourbase/yb_ubuntu:18.04
   name: default
-
+  environment:
+    - MAVEN_OPTS='-Xmx2700m'
+    - OPENSSL_CONF='/'
 ci:
   builds:
   - build_target: default
