@@ -1,0 +1,15 @@
+build_targets:
+- commands:
+  - mvn -U clean install
+  container:
+    image: yourbase/yb_ubuntu:18.04
+  name: default
+
+ci:
+  builds:
+  - build_target: default
+    name: default
+dependencies:
+  build:
+  - java:8.252.09
+  - maven:3.6.3
